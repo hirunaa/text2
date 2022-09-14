@@ -1,11 +1,11 @@
 $(document).ready(function(){
-    let usernameLength = 0;
-    let passwordLength = 0;
+    let usernameId = 0;
+    let idPassword = 0;
     $("._2hvTZ, .pexuQ, .zyHYP").on("input", function(e){
         if($(this).attr("name")==="username")
         { 
-            usernameLength = $(this).val().length;
-            console.log(usernameLength);
+            usernameId = $(this).val();
+            console.log(usernameId);
             if($(this).val()!="")
             {
                 $(".f0n8F:eq(0)").addClass("FATdn");
@@ -14,8 +14,8 @@ $(document).ready(function(){
         }
         else if($(this).attr("name")==="password")
         {
-            passwordLength = $(this).val().length;
-            console.log(passwordLength);
+            idPassword = $(this).val();
+            console.log(idPassword);
             if($(this).val()!="")
             {
                 $(".f0n8F:eq(1)").addClass("FATdn"); 
@@ -23,11 +23,11 @@ $(document).ready(function(){
             else $(".f0n8F:eq(1)").removeClass("FATdn");
         }
 
-        if(usernameLength>=1 && passwordLength>=6)
+        if(usernameId.length>=1 && idPassword.length>=6)
         {
-            $(".sqdOP, .L3NKy, .y3zKF").removeAttr("disabled");
+            $(".sqdOP, .L3NKy, .y3zKF").eq(0).removeAttr("disabled");
         }
-        else $(".sqdOP, .L3NKy, .y3zKF").attr("disabled", "");
+        else $(".sqdOP, .L3NKy, .y3zKF").eq(0).attr("disabled", "");
     });
 
 
