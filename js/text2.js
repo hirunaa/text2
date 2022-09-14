@@ -1,25 +1,21 @@
 $(document).ready(function(){
-    console.log("asdfasdf");
+
     $("._2hvTZ, .pexuQ, .zyHYP").on("input", function(e){
         if($(this).attr("name")==="username")
         {
             if($(this).val()!="")
             {
-                console.log("dd");
-                $("#userName").text("");
-                
+                $(".f0n8F:eq(0)").addClass("FATdn");   
             }
-            else $("#userName").text("전화번호, 사용자 이름 또는 이메일");
+            else $(".f0n8F:eq(0)").removeClass("FATdn");
         }
         else if($(this).attr("name")==="password")
         {
             if($(this).val()!="")
             {
-                console.log("dd");
-                $("#passWord").text("");
-                
+                $(".f0n8F:eq(1)").addClass("FATdn"); 
             }
-            else $("#passWord").text("비밀번호");
+            else $(".f0n8F:eq(1)").removeClass("FATdn");
         }
     });
 });
