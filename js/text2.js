@@ -4,8 +4,30 @@ $(document).ready(function(){
     
     let userList= ["asdfasdf", "qwerasdf"];
     let passwordList = ["123456", "654321"];
-
-    $("._2hvTZ, .pexuQ, .zyHYP").on("input", function(e){
+    function inputFocusInit(){
+        $("._9GP1n").removeClass("HlU5H");
+        $("._2hvTZ, .pexuQ, .zyHYP").removeClass("focus-visible");
+        $("._2hvTZ, .pexuQ, .zyHYP").removeAttr("data-focus-visible-added");
+    }
+    $("._2hvTZ, .pexuQ, .zyHYP").on("focus", function(){
+        inputFocusInit();
+        if($(this).attr("name")==="username")
+        {
+            $("._9GP1n:eq(0)").addClass("HlU5H");
+            $(this).addClass("focus-visible");
+            $(this).attr("data-focus-visible-added","");
+        }
+        if($(this).attr("name")==="password")
+        {
+            $("._9GP1n:eq(1)").addClass("HlU5H");
+            $(this).addClass("focus-visible");
+            $(this).attr("data-focus-visible-added","");
+        }
+    });
+    $("._2hvTZ, .pexuQ, .zyHYP").on("blur",function(){
+        inputFocusInit();
+    });
+    $("._2hvTZ, .pexuQ, .zyHYP").on("input", function(){
         if($(this).attr("name")==="username")
         { 
             usernameId = $(this).val();
@@ -50,13 +72,16 @@ $(document).ready(function(){
         }
         if(userListIndex==passwordListIndex)
         {
-            e.preventDefault();
+            //e.preventDefault();
             console.log("ㅇㅇ");
+            $(".eiCW-").remove();
         }
         else
         {
             e.preventDefault();
             console.log("ㄴㄴ");
+            $("#facebookLogin").eq(0).after(
+                '<div class="eiCW-"><p aria-atomic="true" data-testid="login-error-message" id="slfErrorAlert" role="alert">잘못된 비밀번호입니다. 다시 확인하세요.</p></div>');
         }
     });
 
