@@ -5021,7 +5021,7 @@ a.A086a {
     background-color: #fff;
     background-color: rgba(var(--f23, 255, 255, 255), 1);
     border-radius: 12px;
-    -webkit-mask-image: -webkit-radial-gradient(#fff, #000);
+    /*-webkit-mask-image: -webkit-radial-gradient(#fff, #000);*/
     max-height: 100%;
     overflow: hidden
 }
