@@ -9,7 +9,7 @@ $(document).ready(function(){
     var loginButton = $(".sqdOP, .L3NKy, .y3zKF");
 
     function inputFocusInit(){
-        $(".inputContainer").removeClass("HlU5H");
+        $(".inputContainer").removeClass("inputFocus");
         inputBox.removeClass("focus-visible");
         inputBox.removeAttr("data-focus-visible-added");
     }
@@ -17,13 +17,13 @@ $(document).ready(function(){
         inputFocusInit();
         if($(this).attr("name")==="username")
         {
-            $(".inputContainer:eq(0)").addClass("HlU5H");
+            $(".inputContainer:eq(0)").addClass("inputFocus");
             $(this).addClass("focus-visible");
             $(this).attr("data-focus-visible-added","");
         }
         if($(this).attr("name")==="password")
         {
-            $(".inputContainer:eq(1)").addClass("HlU5H");
+            $(".inputContainer:eq(1)").addClass("inputFocus");
             $(this).addClass("focus-visible");
             $(this).attr("data-focus-visible-added","");
         }
@@ -84,7 +84,7 @@ $(document).ready(function(){
         {
             e.preventDefault();
             //console.log("ㄴㄴ");
-            $("#facebookLogin").eq(0).after(
+            $("#facebookLogin").after(
                 '<div class="eiCW-"><p aria-atomic="true" data-testid="login-error-message" id="slfErrorAlert" role="alert">잘못된 비밀번호입니다. 다시 확인하세요.</p></div>');
         }
     });
