@@ -7,7 +7,7 @@ $(document).ready(function(){
 
     var inputBox = $("._2hvTZ, .pexuQ, .zyHYP");
     var loginButton = $(".sqdOP, .L3NKy, .y3zKF");
-    var loginErrorAlert = $(".eiCW-");
+    
 
     function inputFocusInit(){
         $(".inputContainer").removeClass("inputFocus");
@@ -62,6 +62,9 @@ $(document).ready(function(){
     loginButton.eq(0).on("click", function(e){
         var userListIndex=-1;
         var passwordListIndex=-2;
+        var loginErrorAlert = $(".eiCW-");
+
+        loginErrorAlert.remove();
         for(var i=0; i<userList.length; i++)
         {
             if(userList[i]==usernameId)
@@ -80,6 +83,13 @@ $(document).ready(function(){
             //e.preventDefault();
             //console.log("ㅇㅇ");
             loginErrorAlert.remove();
+        }
+        else if(userListIndex==-1)
+        {
+            e.preventDefault();
+            $("#facebookLogin").after(
+                '<div class="eiCW-"><p aria-atomic="true" data-testid="login-error-message" id="slfErrorAlert" role="alert">입력한 사용자 이름을 사용하는 계정을 찾을 수 없습니다.'
+                +' 사용자 이름을 확인하고 다시 시도하세요.</p></div>');
         }
         else
         {
