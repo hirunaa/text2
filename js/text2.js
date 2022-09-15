@@ -2,8 +2,8 @@ $(document).ready(function(){
     let usernameId = 0;
     let idPassword = 0;
     
-    let userList= ["asdfasdf", "qwerasdf"];
-    let passwordList = ["123456", "654321"];
+    let userList= ["asdfasdf", "qwerasdf", "qwerqwer"];
+    let passwordList = ["123456", "654321", "0246810"];
 
     var inputBox = $("._2hvTZ, .pexuQ, .zyHYP");
     var loginButton = $(".sqdOP, .L3NKy, .y3zKF");
