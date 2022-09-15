@@ -7,6 +7,7 @@ $(document).ready(function(){
 
     var inputBox = $("._2hvTZ, .pexuQ, .zyHYP");
     var loginButton = $(".sqdOP, .L3NKy, .y3zKF");
+    var loginErrorAlert = $(".eiCW-");
 
     function inputFocusInit(){
         $(".inputContainer").removeClass("inputFocus");
@@ -78,7 +79,7 @@ $(document).ready(function(){
         {
             //e.preventDefault();
             //console.log("ㅇㅇ");
-            $(".eiCW-").remove();
+            loginErrorAlert.remove();
         }
         else
         {
